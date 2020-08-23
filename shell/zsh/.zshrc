@@ -21,3 +21,7 @@ autoload -Uz promptinit && promptinit
 prompt codelytv
 
 source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/nahiko/.sdkman"
+[[ -s "/home/nahiko/.sdkman/bin/sdkman-init.sh" ]] && source "/home/nahiko/.sdkman/bin/sdkman-init.sh"
