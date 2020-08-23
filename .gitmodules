@@ -1,9 +1,9 @@
 [submodule "modules/dotbot"]
 	path = modules/dotbot
-	url = git@github.com:anishathalye/dotbot.git
+	url = https://github.com/anishathalye/dotbot.git
 [submodule "modules/dotly"]
 	path = modules/dotly
 	url = https://github.com/CodelyTV/dotly.git
 [submodule "modules/z"]
 	path = modules/z
-	url = git@github.com:rupa/z.git
+	url = https://github.com/rupa/z.git
