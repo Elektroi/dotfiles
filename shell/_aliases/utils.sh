@@ -8,7 +8,6 @@ alias ping='prettyping --nolegend'
 alias k='kill -9'
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
-alias o.='open .'
-alias o= 'xdg-open'
+alias o= 'xdg-open '
 
 alias t="dot filesystem navigate_and_preview_flatten_files"
