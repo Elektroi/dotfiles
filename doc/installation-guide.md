@@ -15,32 +15,26 @@ Copy from the previous computer before The Shutdown™:
 ## New computer
 
 * Log in iCloud and Sync all Keychain passwords
-* Update MacOS
+* Update Ubuntu
 * Paste the directories with data not included in this repo
 * `chmod -R 700 ~/.ssh`
 * `chmod -R 700 ~/.gnupg`
+* Install Rust
+   * https://www.rust-lang.org/tools/install
+   * https://github.com/ogham/exa
+   	* cargo install exa
+   * cargo install navi
+	 https://github.com/denisidoro/navi	 
+* Install Bat and put like bat https://github.com/sharkdp/bat#installation
+* Install the command dot use this library:
+   * apt install python-docopt
 * Execute the dotfiles installer:
-  * `bash <(curl -s https://raw.githubusercontent.com/codelytv/dotfiles/master/installer)`
+  * `bash <(curl -s https://raw.githubusercontent.com/Elektroi/dotfiles/master/installer)`
   * If any dialog appears regarding to not being able to install something, check in "System Preferences… > Security & Privacy" if you have to manually approve it.
   * If there's any error and you want to execute again the cloned dotfiles:
      1. `export DOTFILES_PATH="$HOME/.dotfiles"`
-     2. `.dotfiles/bin/dot" self install` 
-* Give permission to Finder Quick Look plugins
-  * `open ~/Library/Quicklook/QLStephen.qlgenerator/Contents/MacOS/QLStephen`
-  * Go to Security settings and allow it
-  * `open ~/Library/QuickLook/QLColorCode.qlgenerator`
-  * Go to Security settings and allow it
-* Open Google Backup and Sync
-  * Disable "USB Devices & SD Cards"
-  * Open the settings and configure them as follow:
-    * My Computer:
-      * Disable the backup of any folder
-      * Google Drive: Always remove both copies
-      * Google Photos: Disable the upload of newly added photos
-    * Google Drive:
-      * Enable selective sync from Google Drive to the computer
-    * Settings:
-      * Disable "Show warning when you remove…"
+     2. `export DOTLY_PATH="$DOTFILES_PATH/modules/dotly"`
+     3. `.dotfiles/bin/dot" self install` 
 * Open Dropbox
   * Login
   * Open settings:
@@ -70,10 +64,6 @@ Copy from the previous computer before The Shutdown™:
   * Add the work profile and sync
   * Authenticate all the extensions
   * For each profile: Go to History > Show Full History > Tabs from other devices > Open All
-* Open Magnet
-  * Give permissions
-  * Check Launch at login
-  * Open Preferences and remove shortcuts for corner, third, and center positions
 * Open Rocket
   * Give permissions
   * Preferences > General
@@ -90,86 +80,11 @@ Copy from the previous computer before The Shutdown™:
   * Disable automatic startup
   * Download some playlist
 * Open Authy and login
-* Open iTerm
-  * Select load preferences from URL and use ~/.dotfiles/mac/iTerm. On the next prompt select "NOT copy"
-  * Restart iTerm
+
 * Open Slack
   * Login to the same workspaces
-* Install Caret Beta
-  * [Manually download and install](https://caret.io/releases) ([it isn't popular enough to be be included in Brew](https://github.com/Homebrew/homebrew*cask*versions/pull/8392))
-  * Rollback the changes done to the `editors/caret/Preferences` while installing it
-  * Enable Dark mode with `Cmd+Alt+L`
-  * Enable Outline with `Cmd+Shift+B`
-  * Add license
-* Open Contexts
-  * Grant permissions
-  * Configure as other pc
-    * Apparence
-      * Vibrant Dar
-      * Text Size: Large
-    * General
-      * Enable "When using multiple displays, use switching workaround"
-    * Sidebar
-      * No display
-    * Search
-      * Disable "Search with"
-      * "Fast Search with:"
-          * Disable "Fn-<characters>"
-          * Enable "Fast Search with: Right Command-<characters>"
-    * Command-Tab
-      * Shortcut
-        * Command-Tab
-          * Minimized windows: Show at bottom
-          * Hidden windows: Show at bottom
-          * Apps without windows: Do not show
-        * Command-Backtip
-          * Show windows of: Active App
-          * Minimized windows: Show at bottom
-          * Hidden windows: Show at bottom
-          * Apps without windows: Do not show
-      * Show: Neither
-  * Open the license file in order to apply it
-* Open NTFS for Mac Installer
-  * Go to the [license manager](https://my.paragon-software.com/#/dashboard/serial/activations)
-  * Release the license from the legacy PC
-  * Apply the license to the new PC
-* Check Energy Saver preferences and disable menu bar icon
-* Check Date and Time preferences and disable menu bar icon
-* Open iStats
-  * File > Import Settings…
-* Open Monosnap
-  * General:
-    * Launch at login
-  * Hotkeys:
-    * Capture area: `Cmd+Shift+Option+5`
-    * Capture frozen area: `Cmd+Shift+Option+6`
-    * Capture area & Upload: `Not set`
-    * Capture fullscreen: `Cmd+Shift+Option+7`
-    * Fullscreen after 10s: `Cmd+Shift+Option+8`
-    * Open last image: `Cmd+Shift+Option+0`
-  * Account: Sign in
-  * Try to take a capture in order to trigger the permissions dialog
-* Open Transmit
-  * Apply license
-  * Open Preferences > Sync > Login > Override all data in this mac with server data
-* Open Firefox & enable Sync
-* Open Karabiner
-* Open Skype
-* Open Docker
-  * Set disk size depending on the machine disk capacity
-* Open Noti
-  * Preferences > Enable "Start Noti on System startup"
-* Open Bartender
-  * Apply license
-  * Menu Items:
-    * Set Spotlight and Notifications Center menu items in "Always Hide"
-    * Set all the other items except for the iStat Menu ones in "Hide"
-  * Hot Keys:
-    * Show Hidden items: `Cmd+Opt+]`
-    * Search menu bar items: `Ctrl+Opt+]`
-    * Keyboard navigate: `Ctrl+Opt+[`
-* Open MacOS Today drawer (next to the Notifications one) and disable everything except Weather
+
 * Restart
 * Execute `dot shell zsh reload_completions` and then `compinit`
-* Stop `mariadb` service making it to not start on system start up: `brew services stop mariadb`
+
 * Once the Google Drive folder has been sync: `ln -s ~/Pictures/Wallpapers ~/Google\ Drive/📸\ Photos/Wallpapers\ en\ uso/`
