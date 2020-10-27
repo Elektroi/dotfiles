@@ -8,35 +8,32 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    stop
-
-docs::eval "$@"
+##?    stop
 
 if docker ps >/dev/null 2>&1; then
+  container=$( docker ps | 
+  		awk '{
+  			if(NR==1){
+  			 print "all: Stop all containers"
+  			}else{
+  			 print $1 ": " $(NF)
+  			}
+  		    }' |
+  		fzf --height 40%
+  	    )
 
-  container=$( docker ps | 
-  		awk '{
-  			if(NR==1){
-  			 print "all: Stop all containers"
-  			}else{
-  			 print $1 ": " $(NF)
-  			}
-  		    }' |
-  		fzf --height 40%
-  	    )
-
-  if [[ -n $container ]]; then
-    container_id=$(echo $container | awk -F ': ' '{print $1}')
-    if [ $container_id == "all" ]; then
+  if [[ -n $container ]]; then
+    container_id=$(echo $container | awk -F ': ' '{print $1}')
+    if [ $container_id == "all" ]; then
 	echo "Stopping all the containers"
-    	docker stop $(docker ps -a -q)
-    else
-       docker stop $container_id
-    fi
-  else
-    echo "You haven't selected any container! ༼つ◕_◕༽つ"
-  fi
+    	docker stop $(docker ps -a -q)
+    else
+       docker stop $container_id
+    fi
+  else
+    echo "You haven't selected any container! ༼つ◕_◕༽つ"
+  fi
 else
-  echo "Docker daemon is not running! (ಠ_ಠ)"
+  echo "Docker daemon is not running! (ಠ_ಠ)"
 fi
 
