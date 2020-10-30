@@ -4,8 +4,10 @@ RUBY_PATH='/usr/local/opt/ruby'
 
 export JAVA_HOME='/usr/lib/jvm/java-11-amazon-corretto'
 export GEM_HOME="$HOME/.gem"
-export GOPATH="$HOME/.go"
+#export GOPATH="$HOME/.go"
+export GOPATH="/usr/local/go"
 
+export BREW="/home/linuxbrew/.linuxbrew"
 
 export SBT_OPTS='-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF8'
 export SBT_CREDENTIALS="$HOME/.sbt/.credentials"
@@ -28,6 +30,7 @@ paths=(
   "$JAVA_HOME/bin"
   "$GOPATH/bin"
   "$GEM_HOME/bin"
+  "$BREW/bin"
   "$PYTHON_PATH/libexec/bin"
   "/bin"
   "/usr/local/bin" # This contains Brew ZSH. If it's below `/bin` it won't be executed.

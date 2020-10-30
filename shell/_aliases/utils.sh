@@ -1,6 +1,8 @@
 alias up="dot package update_all"
 
 # Others
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 alias c='pbcopy'
 alias dc='dot docker connect'
 alias ping='prettyping --nolegend'
